@@ -75,7 +75,7 @@ namespace FETLevelUpCalc
             //str roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (str < 30)
+                if (str < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -90,15 +90,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (str > 30)
+                if (str > 40)
                 {
-                    str = 30;
+                    str = 40;
                 }
             }
             //mag roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (mag < 30)
+                if (mag < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -113,15 +113,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (mag > 30)
+                if (mag > 40)
                 {
-                    mag = 30;
+                    mag = 40;
                 }
             }
             //spd roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (spd < 30)
+                if (spd < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -136,15 +136,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (spd > 30)
+                if (spd > 40)
                 {
-                    spd = 30;
+                    spd = 40;
                 }
             }
             //skl roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (skl < 30)
+                if (skl < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -159,15 +159,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (skl > 30)
+                if (skl > 40)
                 {
-                    skl = 30;
+                    skl = 40;
                 }
             }
             //def roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (def < 30)
+                if (def < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -182,15 +182,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (def > 30)
+                if (def > 40)
                 {
-                    def = 30;
+                    def = 40;
                 }
             }
             //res roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (res < 30)
+                if (res < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -205,15 +205,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (res > 30)
+                if (res > 40)
                 {
-                    res = 30;
+                    res = 40;
                 }
             }
             //lck roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (lck < 30)
+                if (lck < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -228,9 +228,9 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (lck > 30)
+                if (lck > 40)
                 {
-                    lck = 30;
+                    lck = 40;
                 }
             }
             lvl += levels;
@@ -271,15 +271,15 @@ namespace FETLevelUpCalc
         int mag = 3;
         int magGrowth = 10;
         int spd = 4;
-        int spdGrowth = 30;
+        int spdGrowth = 40;
         int skl = 4;
-        int sklGrowth = 30;
+        int sklGrowth = 40;
         int def = 4;
-        int defGrowth = 30;
+        int defGrowth = 40;
         int res = 3;
-        int resGrowth = 30;
+        int resGrowth = 40;
         int lck = 4;
-        int lckGrowth = 30;
+        int lckGrowth = 40;
         int con = 8;
         int lvl = 1;
 
@@ -338,7 +338,7 @@ namespace FETLevelUpCalc
             //str roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (str < 30)
+                if (str < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -353,15 +353,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (str > 30)
+                if (str > 40)
                 {
-                    str = 30;
+                    str = 40;
                 }
             }
             //mag roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (mag < 30)
+                if (mag < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -376,15 +376,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (mag > 30)
+                if (mag > 40)
                 {
-                    mag = 30;
+                    mag = 40;
                 }
             }
             //spd roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (spd < 30)
+                if (spd < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -399,15 +399,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (spd > 30)
+                if (spd > 40)
                 {
-                    spd = 30;
+                    spd = 40;
                 }
             }
             //skl roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (skl < 30)
+                if (skl < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -422,15 +422,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (skl > 30)
+                if (skl > 40)
                 {
-                    skl = 30;
+                    skl = 40;
                 }
             }
             //def roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (def < 30)
+                if (def < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -445,15 +445,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (def > 30)
+                if (def > 40)
                 {
-                    def = 30;
+                    def = 40;
                 }
             }
             //res roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (res < 30)
+                if (res < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -468,15 +468,15 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (res > 30)
+                if (res > 40)
                 {
-                    res = 30;
+                    res = 40;
                 }
             }
             //lck roll
             for (rolls = 0; rolls < levels; rolls++)
             {
-                if (lck < 30)
+                if (lck < 40)
                 {
                     /* in case the growth is over 100,
                      * this will add the guaranteed points 
@@ -491,9 +491,9 @@ namespace FETLevelUpCalc
                     }
                 }
                 //check for stat cap
-                if (lck > 30)
+                if (lck > 40)
                 {
-                    lck = 30;
+                    lck = 40;
                 }
             }
             lvl += levels;
