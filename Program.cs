@@ -1,240 +1,139 @@
 ﻿using System;
+using BaseClasses;
+using Calculations;
 
-namespace FETLevelUpCalc
+namespace Calculations
 {
     class LevelUpCalculator
     {
         static void Main(String[] args)
         {
-            Soldier soldier1 = new Soldier();
-            soldier1.PrintStats();
+            BaseClass base1 = new BaseClass(1, 5,
+                                            10, 50,
+                                            1, 45,
+                                            1, 40,
+                                            1, 35,
+                                            1, 30,
+                                            1, 25,
+                                            1, 20,
+                                            1, 15);
+            base1.PrintStats();
 
             Console.WriteLine("How many level ups?");
 
             int levels = int.Parse(Console.ReadLine());
 
-            soldier1.LevelUp(levels);
+            base1.LevelUp(levels);
+
+            Console.ReadKey();
+
+            Soldier soldier1 = new Soldier();
+            soldier1.PrintStats();
+
+            Console.WriteLine("How many level ups?");
+
+            int levels2 =int.Parse(Console.ReadLine());
+
+            soldier1.LevelUp(levels2);
 
             Console.ReadKey();
 
 
         }
-    }
 
-    public class BaseClass
-    {
-        public int hp = 0;
-        public int hpGrowth = 0;
-        public int str = 0;
-        public int strGrowth = 0;
-        public int mag = 0;
-        public int magGrowth = 0;
-        public int spd = 0;
-        public int spdGrowth = 0;
-        public int skl = 0;
-        public int sklGrowth = 0;
-        public int def = 0;
-        public int defGrowth = 0;
-        public int res = 0;
-        public int resGrowth = 0;
-        public int lck = 0;
-        public int lckGrowth = 0;
-        public int con = 0;
-        public int lvl = 0;
-
-        public void LevelUp(int levels)
+        public static int LevelUpHP(int levels, int hp, int hpGrowth)
         {
             Random rand = new Random();
-            int toAdd;
             int temp = 0;
-            int rolls;
+            int toAdd = 0;
 
-            //hp roll
-            for (rolls = 0; rolls < levels; rolls++)
+            for (int rolls = 0; rolls < levels; rolls++)
             {
                 if (hp < 60)
                 {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
+                    /*checks if hp is capped and adds guaranteed 
+                     * levels if growth is over 100%
+                    */
                     toAdd = (hpGrowth / 100);
-                    hp += toAdd;
                     temp = hpGrowth - (toAdd * 100);
-                    if(rand.Next(1, 100) <= temp)
+
+                    if (rand.Next(1, 100) <= temp)
                     {
                         hp++;
                     }
+
+                    hp += toAdd;
+                   
                 }
-                //check for stat cap
-                if(hp > 60)
+
+                if (hp > 60)
                 {
                     hp = 60;
+                    
                 }
             }
-            //str roll
-            for (rolls = 0; rolls < levels; rolls++)
+
+            return hp;
+        }
+
+        public static int LevelUpStat(int levels, int stat, int statGrowth)
+        {
+            Random rand = new Random();
+            int temp = 0;
+            int toAdd = 0;
+
+            for (int rolls = 0; rolls < levels; rolls++)
             {
-                if (str < 40)
+                if (stat < 40)
                 {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (strGrowth / 100);
-                    str += toAdd;
-                    temp = strGrowth - (toAdd * 100);
+                    toAdd = (statGrowth / 100);
+                    temp = statGrowth - (toAdd * 100);
+
                     if (rand.Next(1, 100) <= temp)
                     {
-                        str++;
+                        stat++;
                     }
+
+                    stat += toAdd;
+
                 }
-                //check for stat cap
-                if (str > 40)
+
+                if (stat > 40)
                 {
-                    str = 40;
+                    stat = 40;
+
                 }
             }
-            //mag roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (mag < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (magGrowth / 100);
-                    mag += toAdd;
-                    temp = magGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        mag++;
-                    }
-                }
-                //check for stat cap
-                if (mag > 40)
-                {
-                    mag = 40;
-                }
-            }
-            //spd roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (spd < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (spdGrowth / 100);
-                    spd += toAdd;
-                    temp = spdGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        spd++;
-                    }
-                }
-                //check for stat cap
-                if (spd > 40)
-                {
-                    spd = 40;
-                }
-            }
-            //skl roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (skl < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (sklGrowth / 100);
-                    skl += toAdd;
-                    temp = sklGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        skl++;
-                    }
-                }
-                //check for stat cap
-                if (skl > 40)
-                {
-                    skl = 40;
-                }
-            }
-            //def roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (def < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (defGrowth / 100);
-                    def += toAdd;
-                    temp = sklGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        def++;
-                    }
-                }
-                //check for stat cap
-                if (def > 40)
-                {
-                    def = 40;
-                }
-            }
-            //res roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (res < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (resGrowth / 100);
-                    res += toAdd;
-                    temp = resGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        res++;
-                    }
-                }
-                //check for stat cap
-                if (res > 40)
-                {
-                    res = 40;
-                }
-            }
-            //lck roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (lck < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (lckGrowth / 100);
-                    lck += toAdd;
-                    temp = lckGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        lck++;
-                    }
-                }
-                //check for stat cap
-                if (lck > 40)
-                {
-                    lck = 40;
-                }
-            }
+
+            return stat;
+        }
+    }    
+}
+
+namespace BaseClasses
+{
+    public class BaseClass(int lvl, int con,
+                           int hp, int hpGrowth,
+                           int str, int strGrowth,
+                           int mag, int magGrowth,
+                           int spd, int spdGrowth,
+                           int skl, int sklGrowth,
+                           int def, int defGrowth,
+                           int res, int resGrowth,
+                           int lck, int lckGrowth)
+    {
+     
+        public void LevelUp(int levels)
+        {
+            hp = LevelUpCalculator.LevelUpHP(levels, hp, hpGrowth);
+            str = LevelUpCalculator.LevelUpStat(levels, str, strGrowth);
+            mag = LevelUpCalculator.LevelUpStat(levels, mag, magGrowth);
+            spd = LevelUpCalculator.LevelUpStat(levels, spd, spdGrowth);
+            skl = LevelUpCalculator.LevelUpStat(levels, skl, sklGrowth);
+            def = LevelUpCalculator.LevelUpStat(levels, def, defGrowth);
+            res = LevelUpCalculator.LevelUpStat(levels, res, resGrowth);
+            lck = LevelUpCalculator.LevelUpStat(levels, lck, lckGrowth);
             lvl += levels;
-            //print the changes
             PrintStats();
         }
 
@@ -260,26 +159,26 @@ namespace FETLevelUpCalc
             Console.WriteLine("CON: " + con);
         }
 
-    }
 
-    public class Soldier 
+    }
+    public class Soldier
     {
         int hp = 16;
         int hpGrowth = 50;
         int str = 4;
         int strGrowth = 40;
-        int mag = 3;
+        int mag = 1;
         int magGrowth = 10;
         int spd = 4;
-        int spdGrowth = 40;
+        int spdGrowth = 30;
         int skl = 4;
-        int sklGrowth = 40;
+        int sklGrowth = 30;
         int def = 4;
-        int defGrowth = 40;
-        int res = 3;
-        int resGrowth = 40;
+        int defGrowth = 30;
+        int res = 2;
+        int resGrowth = 30;
         int lck = 4;
-        int lckGrowth = 40;
+        int lckGrowth = 30;
         int con = 8;
         int lvl = 1;
 
@@ -307,197 +206,15 @@ namespace FETLevelUpCalc
 
         public void LevelUp(int levels)
         {
-            Random rand = new Random();
-            int toAdd;
-            int temp = 0;
-            int rolls;
-
-            //hp roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (hp < 60)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (hpGrowth / 100);
-                    hp += toAdd;
-                    temp = hpGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        hp++;
-                    }
-                }
-                //check for stat cap
-                if (hp > 60)
-                {
-                    hp = 60;
-                }
-            }
-            //str roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (str < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (strGrowth / 100);
-                    str += toAdd;
-                    temp = strGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        str++;
-                    }
-                }
-                //check for stat cap
-                if (str > 40)
-                {
-                    str = 40;
-                }
-            }
-            //mag roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (mag < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (magGrowth / 100);
-                    mag += toAdd;
-                    temp = magGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        mag++;
-                    }
-                }
-                //check for stat cap
-                if (mag > 40)
-                {
-                    mag = 40;
-                }
-            }
-            //spd roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (spd < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (spdGrowth / 100);
-                    spd += toAdd;
-                    temp = spdGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        spd++;
-                    }
-                }
-                //check for stat cap
-                if (spd > 40)
-                {
-                    spd = 40;
-                }
-            }
-            //skl roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (skl < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (sklGrowth / 100);
-                    skl += toAdd;
-                    temp = sklGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        skl++;
-                    }
-                }
-                //check for stat cap
-                if (skl > 40)
-                {
-                    skl = 40;
-                }
-            }
-            //def roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (def < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (defGrowth / 100);
-                    def += toAdd;
-                    temp = sklGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        def++;
-                    }
-                }
-                //check for stat cap
-                if (def > 40)
-                {
-                    def = 40;
-                }
-            }
-            //res roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (res < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (resGrowth / 100);
-                    res += toAdd;
-                    temp = resGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        res++;
-                    }
-                }
-                //check for stat cap
-                if (res > 40)
-                {
-                    res = 40;
-                }
-            }
-            //lck roll
-            for (rolls = 0; rolls < levels; rolls++)
-            {
-                if (lck < 40)
-                {
-                    /* in case the growth is over 100,
-                     * this will add the guaranteed points 
-                     * for the level up.
-                     */
-                    toAdd = (lckGrowth / 100);
-                    lck += toAdd;
-                    temp = lckGrowth - (toAdd * 100);
-                    if (rand.Next(1, 100) <= temp)
-                    {
-                        lck++;
-                    }
-                }
-                //check for stat cap
-                if (lck > 40)
-                {
-                    lck = 40;
-                }
-            }
+            hp = LevelUpCalculator.LevelUpHP(levels, hp, hpGrowth);
+            str = LevelUpCalculator.LevelUpStat(levels, str, strGrowth);
+            mag = LevelUpCalculator.LevelUpStat(levels, mag, magGrowth);
+            spd = LevelUpCalculator.LevelUpStat(levels, spd, spdGrowth);
+            skl = LevelUpCalculator.LevelUpStat(levels, skl, sklGrowth);
+            def = LevelUpCalculator.LevelUpStat(levels, def, defGrowth);
+            res = LevelUpCalculator.LevelUpStat(levels, res, resGrowth);
+            lck = LevelUpCalculator.LevelUpStat(levels, lck, lckGrowth);
             lvl += levels;
-            //print the changes
             PrintStats();
         }
     }
