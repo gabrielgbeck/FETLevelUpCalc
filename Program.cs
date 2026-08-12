@@ -10,36 +10,19 @@ namespace FELevelUpCalc
     {
         static void Main(String[] args)
         {
-            BaseClass base1 = new BaseClass(1, 5,
-                                            10, 50,
-                                            1, 45,
-                                            1, 40,
-                                            1, 35,
-                                            1, 30,
-                                            1, 25,
-                                            1, 20,
-                                            1, 15);
-            base1.PrintStats();
+            RandClass rand1 = new RandClass();
+
+            rand1.GenerateAllStats();
+            rand1.GenerateAllGrowths();
+            rand1.PrintStats();
 
             Console.WriteLine("How many level ups?");
 
             int levels = int.Parse(Console.ReadLine());
 
-            base1.LevelUp(levels);
+            rand1.LevelUp(levels);
 
             Console.ReadKey();
-
-            Soldier soldier1 = new Soldier();
-            soldier1.PrintStats();
-
-            Console.WriteLine("How many level ups?");
-
-            int levels2 =int.Parse(Console.ReadLine());
-
-            soldier1.LevelUp(levels2);
-
-            Console.ReadKey();
-
 
         }
 
