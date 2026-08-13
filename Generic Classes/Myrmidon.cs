@@ -7,26 +7,26 @@ using FELevelUpCalc;
 
 namespace GenericClasses
 {
-    public class Soldier
+    public class Myrmidon
     {
         int lvl = 1;
-        int con = 8;
-        int hp = 16;
+        int con = 7;
+        int hp = 14;
         int hpGrowth = 50;
         int str = 4;
-        int strGrowth = 40;
+        int strGrowth = 30;
         int mag = 1;
         int magGrowth = 10;
-        int spd = 4;
-        int spdGrowth = 30;
-        int skl = 4;
-        int sklGrowth = 30;
-        int def = 4;
-        int defGrowth = 30;
-        int res = 2;
-        int resGrowth = 30;
+        int spd = 6;
+        int spdGrowth = 45;
+        int skl = 5;
+        int sklGrowth = 45;
+        int def = 3;
+        int defGrowth = 25;
+        int res = 1;
+        int resGrowth = 20;
         int lck = 4;
-        int lckGrowth = 30;
+        int lckGrowth = 25;
 
         public void PrintStats()
         {

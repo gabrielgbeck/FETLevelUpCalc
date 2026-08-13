@@ -9,24 +9,24 @@ namespace GenericClasses
 {
     public class Mercenary
     {
+        int lvl = 1;
+        int con = 9;
         int hp = 18;
-        int hpGrowth = 50;
+        int hpGrowth = 60;
         int str = 6;
         int strGrowth = 50;
         int mag = 0;
         int magGrowth = 10;
         int spd = 4;
-        int spdGrowth = 35;
+        int spdGrowth = 30;
         int skl = 3;
-        int sklGrowth = 30;
+        int sklGrowth = 25;
         int def = 5;
         int defGrowth = 35;
         int res = 1;
         int resGrowth = 20;
         int lck = 3;
         int lckGrowth = 20;
-        int con = 9;
-        int lvl = 1;
 
         public void PrintStats()
         {
