@@ -10,17 +10,14 @@ namespace FELevelUpCalc
     {
         static void Main(String[] args)
         {
-            RandClass rand1 = new RandClass();
-
-            rand1.GenerateAllStats();
-            rand1.GenerateAllGrowths();
-            rand1.PrintStats();
+            Mage enemy1 = new Mage();
+            enemy1.PrintStats();
 
             Console.WriteLine("How many level ups?");
 
             int levels = int.Parse(Console.ReadLine());
 
-            rand1.LevelUp(levels);
+            enemy1.LevelUp(levels);
 
             Console.ReadKey();
 
