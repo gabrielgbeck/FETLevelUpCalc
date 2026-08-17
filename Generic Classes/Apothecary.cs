@@ -7,7 +7,7 @@ using FELevelUpCalc;
 
 namespace GenericClasses
 {
-    public class Monk
+    public class Apothecary
     {
         int lvl = 1;
         int con = 7;
@@ -17,7 +17,7 @@ namespace GenericClasses
         int strGrowth = 0;
         int mag = 6;
         int magGrowth = 60;
-        int spd = 3;
+        int spd = 4;
         int spdGrowth = 30;
         int skl = 3;
         int sklGrowth = 40;
