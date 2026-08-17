@@ -3,26 +3,28 @@ using BaseClasses;
 using FELevelUpCalc;
 using GenericClasses;
 
-
+//Fire Emblem style level up calculation
 namespace FELevelUpCalc
 {
     class LevelUpCalculator
     {
         static void Main(String[] args)
         {
-            Mage enemy1 = new Mage();
-            enemy1.PrintStats();
+            RandClass random = new RandClass();
+            random.GenerateAllStats();
+            random.GenerateAllGrowths();
+            random.PrintStats();
 
             Console.WriteLine("How many level ups?");
 
             int levels = int.Parse(Console.ReadLine());
 
-            enemy1.LevelUp(levels);
+            random.LevelUp(levels);
 
             Console.ReadKey();
 
         }
-
+        //Level up system for Hit Points
         public static int LevelUpHP(int levels, int hp, int hpGrowth)
         {
             Random rand = new Random();
@@ -47,7 +49,7 @@ namespace FELevelUpCalc
                     hp += toAdd;
                    
                 }
-
+                //checks hp cap after level up
                 if (hp > 60)
                 {
                     hp = 60;
@@ -57,7 +59,7 @@ namespace FELevelUpCalc
 
             return hp;
         }
-
+        //Individual Stat level up formula
         public static int LevelUpStat(int levels, int stat, int statGrowth)
         {
             Random rand = new Random();
@@ -66,6 +68,9 @@ namespace FELevelUpCalc
 
             for (int rolls = 0; rolls < levels; rolls++)
             {
+                /* Checks for stat cap and guarantees levels if
+                 * growth rate is over 100%
+                 */
                 if (stat < 40)
                 {
                     toAdd = (statGrowth / 100);
@@ -79,7 +84,7 @@ namespace FELevelUpCalc
                     stat += toAdd;
 
                 }
-
+                // Checks stat cap after level up
                 if (stat > 40)
                 {
                     stat = 40;

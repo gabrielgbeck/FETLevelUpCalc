@@ -80,6 +80,7 @@ namespace BaseClasses
         int ptsRemaining = 26;
         int growthRemaining = 250;
 
+        //generate random stats from a pool of 26 points
         public int GenerateStat()
         {
             if (ptsRemaining > 0)
@@ -108,6 +109,7 @@ namespace BaseClasses
             hp = con * 2;
         }
 
+        //generate growth rates from a pool of 250%
         public int GenerateGrowth()
         {
             if (growthRemaining > 0)
